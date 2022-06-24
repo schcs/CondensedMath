@@ -3,6 +3,8 @@
 
 Organizado por John MacQuarrie e André Contiero
 
+O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://www.math.uni-bonn.de/people/scholze/Condensed.pdf) por Peter Scholze
+
 ## Notas e apostilas 
 
 - [Introdução](PDF/intro.pdf) (24/06/2022, John)
