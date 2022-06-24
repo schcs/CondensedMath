@@ -1,7 +1,7 @@
 # Matemática condensada
 ### Seminário na UFMG
 
-Organizado por John McQuarrie e André Contiero
+Organizado por John MacQuarrie e André Contiero
 
 ## Notas e apostilas 
 
