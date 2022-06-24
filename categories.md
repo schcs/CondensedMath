@@ -88,7 +88,7 @@ Uma subcategoria $D$ de $C$ contém objetos de $C$ e $H_D(A,B)\subseteq H_C(A,B)
 
 Sejam $C$ e $D$ categorias e $F,G: C\to D$ functores. Uma transformação natural $\alpha$ entre $F$ e $G$ é composta por uma família de morfismos 
 $\alpha_A:F(A)\to G(A)$ para todo objeto $A$ em $C$ tal que para todo mapa $f:A \to B$ temos que o diagrama 
-$$
+<!--$$
 \require{AMSCd}
 \begin{CD}
 F(A) @>>> F(B)\\
@@ -96,36 +96,31 @@ F(A) @>>> F(B)\\
 G(A) @VVV G(B)
 \end{CD}
 $$
+-->
 comuta. 
 
 ### Exemplos
 
-Seja $C$ uma categoria discreta sobre um conjunto $X$. Então $C$ não tem setas, exceto $1_x$ para todo $x\in X$. Seja $D$ uma categoria qualquer. Então 
-functores $F,G:C\to D$ escolhem um elemento $F(x)$ e $G(x)$ para cada $x \in X$. Uma transformação natural $\alpha$ é uma coleção de mapas 
-$\alpha_x:F(x)\to G(x)$.   
+- Seja $C$ uma categoria discreta sobre um conjunto $X$. Então $C$ não tem setas, exceto $1_x$ para todo $x\in X$. Seja $D$ uma categoria qualquer. Então functores $F,G:C\to D$ escolhem um elemento $F(x)$ e $G(x)$ para cada $x \in X$. Uma transformação natural $\alpha$ é uma coleção de mapas  $\alpha_x:F(x)\to G(x)$.   
+- Considere $F,G:CRing \to Grp$. $F(R) = GL_n(R)$, $G(R)=R^*$. Afirmamos que $\det_R:GL_n(R) \to R^*$ é uma transformação natural. 
 
-
-Exemplo. Considere $F,G:CRing -> Grp$. $F(R) = GL_n(R)$, $G(R)=R^*$. Afirmamos que $\det_R:GL_n(R) -> R^*$ é uma transformação natural. 
-
-Transformações naturais podem ser compostas. Se $F,G,H:C->D$ functores, $\alpha:F\to G$, $\beta:G\to H$ são transformações naturais, então a composição $\beta\alpha$ é transformação natural $F\to H$. A identidade $1_{F(A)}:F(A)\to F(A)$ natural $F\to F$. Assis se $C$ e $D$ são categorias, então 
+Transformações naturais podem ser compostas. Se $F,G,H:C\to D$ functores, $\alpha:F\to G$, $\beta:G\to H$ são transformações naturais, então a composição $\beta\alpha$ é transformação natural $F\to H$. A identidade $1_{F(A)}:F(A)\to F(A)$ natural $F\to F$. Assis se $C$ e $D$ são categorias, então 
 a categoria dos funtores $[C,D]$ tem objetos functores entre $C$ e $D$ a as transformações naturais como morfismos. 
 
 Isomorphismo natural entre $F$ e $G$ é uma transformação natural $\alpha$ tal que $\alpha_A:F(A)\to G(A)$ é um isomorfismo.
 
-Exercício: Isomorphismo natural é um isomorfismo na categoria dos functores. Neste caso os functores $F$ e $G$ são naturalmente isomorfos. 
+__Exercício:__ Isomorphismo natural é um isomorfismo na categoria dos functores. Neste caso os functores $F$ e $G$ são naturalmente isomorfos. 
 
 Dados dois functores $F,G:C\to D$. Dizemos que $F(A)$ e $G(A)$ são naturalmente isomorfos se $F$ e $G$ são naturalmente isomorfos. 
 
 ### Duplo dual
 
-Seja $V$ e $W$ espaços vetoriais. Para $\alpha: V\to W$, temos que $\alpha^*=-\circ \alpha$ e $\alpha^{**}(\beta) = \beta(-\circ \alpha)$. 
-Temos que $v\mapsto \varphi_v$ é um mapa de $V\to V^{**}$ onde $\varphi(v)(\beta)=\beta(v)$. Precisa provar que 
-$\alpha^{**}(\varphi_v)=\varphi(\alpha_v)$. Mas isso segue dos fatos que 
-\[
-    \alpha^{**}(\varphi_v)(\beta)=\varphi_v(-\circ\alpha)(\chi)=\varphi_v(\chi\circ\alpha)=\chi(\alpha(v))
-\]
+Seja $V$ e $W$ espaços vetoriais. Para $\alpha: V\to W$, temos que $\alpha^*=-\circ \alpha$ e $\alpha^{**}(\beta) = \beta(-\circ \alpha)$. Temos que $v\mapsto \varphi_v$ é um mapa de $V\to V^{**}$ onde $\varphi_v(\beta)=\beta(v)$. Precisa provar que  $\alpha^{**}(\varphi_v)=\varphi(\alpha_v)$. Mas isso segue dos fatos que 
+$$
+    \alpha^{**}(\varphi_v)(\chi)=\varphi_v(-\circ\alpha)(\chi)=\varphi_v(\chi\circ\alpha)=\chi(\alpha(v))
+$$
 e 
-\[
+$$
     \varphi_{\alpha(v)}(\chi)=\chi(\alpha(v)).
-\]
+$$
 Pronto.
