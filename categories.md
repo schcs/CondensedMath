@@ -37,7 +37,7 @@ Um mapa $f\in H(A,B)$ é dito __isomorfismo__, se existir $g\in H(B,A)$ tal que 
 - Um monoide $M$ pode ser visto como uma categoria com um objeto $A$ e uma seta associada com cada elemento de $M$. A identidade de $M$ corresponde a $1_A$ e a associatividade do monoide corresponde à associatividade da composição.
 - Um grupo $G$ pode ser visto como  uma categoria com um objeto $A$ e uma seta  associada com cada elemento de $G$. Neste caso toda seta da categoria é um isomorfismo.
 - Se $P$ é um conjunto parcialmente ordenado, então $P$ pode ser visto como uma categoria. Os objetos da categoria são os elementos de $P$ e temos
-$\alpha\to\beta$ <!--na categoria se e somente se $\alpha\leq \beta$.-->
+$\alpha\to\beta$ na categoria se e somente <!--se $\alpha\leq \beta$.-->
 
 ## Categoria oposta ou dual. 
 
