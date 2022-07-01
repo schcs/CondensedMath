@@ -21,8 +21,8 @@ As seguintes são os exemplos mais comuns de categorias:
 - __Set__: Os objetos são conjuntos, os mapas são mapas entre conjuntos.
 - __Grp__: Os objetos são grupos, e os mapas são homomorfismos entre grupos. 
 - __Ring__: Os objetos são anéis (com $1$), e os mapas são homomorfismos entre anéis.
--- __CRing__: Os objetos são anéis comutativos (com $1$), e os mapas são homomorfismos entre anéis 
-computativos.
+- __CRing__: Os objetos são anéis comutativos (com $1$), e os mapas são homomorfismos entre anéis 
+comutativos.
 - __Vect_k__: Os objetos são espaços vetoriais sobre um corpo $k$ e os objetos são aplicações $k$-lineares.
 - __$R$-Mod__: Os objetos são $R$-módulos (à esquerda) e os mapas são $R$-homomorfismos. 
 - __Top__: Os objetos são espaços topológicos e os mapas são funções contínuas.
@@ -36,7 +36,8 @@ Um mapa $f\in H(A,B)$ é dito __isomorfismo__, se existir $g\in H(B,A)$ tal que 
 - $A\to B$ com dois objetos e três setas $1_A$, $1_B$, $A\to B$. 
 - Um monoide $M$ pode ser visto como uma categoria com um objeto $A$ e uma seta associada com cada elemento de $M$. A identidade de $M$ corresponde a $1_A$ e a associatividade do monoide corresponde à associatividade da composição.
 - Um grupo $G$ pode ser visto como  uma categoria com um objeto $A$ e uma seta  associada com cada elemento de $G$. Neste caso toda seta da categoria é um isomorfismo.
-- Se $P$ é um conjunto parcialmente ordenado, então $P$ pode ser vista como uma categoria. Os objetos da categoria são os elementos de $P$ e temos $\alpha\to\beta$ na categoria se e somente se $\alpha\leq \beta$.
+- Se $P$ é um conjunto parcialmente ordenado, então $P$ pode ser visto como uma categoria. Os objetos da categoria são os elementos de $P$ e temos
+$\alpha\to\beta$ na categoria se e somente se $\alpha\leq \beta$.
 
 ## Categoria oposta ou dual. 
 
@@ -82,21 +83,15 @@ são fechados para $I\subseteq R$ ideais. Se $f:R\to S$, então $\mbox{Spec}(f):
 
 Um functor $F:C\to D$ é dito fiel (cheio, full) se os mapas $H(A,B)\to H(F(A),F(B))$ são injetivos (sobrejetivos). 
 
-Uma subcategoria $D$ de $C$ contém objetos de $C$ e $H_D(A,B)\subseteq H_C(A,B)$. Subcategoria cheia se $H_D(A,B)= H_C(A,B)$. Por exemplo, Ab é uma subcategoria cheia de Grp.
+Uma subcategoria $D$ de $C$ contém objetos de $C$ e $H_D(A,B)\subseteq H_C(A,B)$. Subcategoria é cheia se $H_D(A,B)= H_C(A,B)$. Por exemplo, Ab é uma subcategoria cheia de Grp.
 
 ## Transformação natural
 
 Sejam $C$ e $D$ categorias e $F,G: C\to D$ functores. Uma transformação natural $\alpha$ entre $F$ e $G$ é composta por uma família de morfismos 
 $\alpha_A:F(A)\to G(A)$ para todo objeto $A$ em $C$ tal que para todo mapa $f:A \to B$ temos que o diagrama 
-<!--$$
-\require{AMSCd}
-\begin{CD}
-F(A) @>>> F(B)\\
- @VVV       V@@@\\
-G(A) @VVV G(B)
-\end{CD}
-$$
--->
+
+![image](diag.png?row=true)
+
 comuta. 
 
 ### Exemplos
@@ -115,7 +110,10 @@ Dados dois functores $F,G:C\to D$. Dizemos que $F(A)$ e $G(A)$ são naturalmente
 
 ### Duplo dual
 
-Seja $V$ e $W$ espaços vetoriais. Para $\alpha: V\to W$, temos que $\alpha^*=-\circ \alpha$ e $\alpha^{**}(\beta) = \beta(-\circ \alpha)$. Temos que $v\mapsto \varphi_v$ é um mapa de $V\to V^{**}$ onde $\varphi_v(\beta)=\beta(v)$. Precisa provar que  $\alpha^{**}(\varphi_v)=\varphi(\alpha_v)$. Mas isso segue dos fatos que 
+Seja $V$ e $W$ espaços vetoriais. Para $\alpha: V\to W$, temos que $\alpha^*=-\circ \alpha$ e $\alpha^{**}(\beta) = \beta(-\circ \alpha)$. Temos que $v\mapsto \varphi_v$ é um mapa de $V\to V^{**}$ onde $\varphi_v(\beta)=\beta(v)$. 
+
+Afirmamos que $\varphi:v\varphi(v)$ é uma transformação natural de do funcor identidade ao functor $(-)^{**}$. 
+Precisa provar que  $\alpha^{**}(\varphi_v)=\varphi(\alpha_v)$. Mas isso segue dos fatos que 
 $$
     \alpha^{**}(\varphi_v)(\chi)=\varphi_v(-\circ\alpha)(\chi)=\varphi_v(\chi\circ\alpha)=\chi(\alpha(v))
 $$
@@ -123,4 +121,5 @@ e
 $$
     \varphi_{\alpha(v)}(\chi)=\chi(\alpha(v)).
 $$
-Pronto.
+
+$(-)^{**}$ é um isomorfismo natural na categoria FVec_k de espaços vetoriais de dimensão finita.
