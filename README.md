@@ -7,6 +7,6 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 
 ## Notas e apostilas 
 
-- [Introdução](PDF/intro.pdf) (24/06/2022, John)
-- [Categorias](PDF/categories.pdf) (24/06/2022 e 01/07/2022, Csaba)
-
+- [Introdução](PDF/intro.pdf) (24/06/2022, John MacQuarrie)
+- [Categorias](PDF/categories.pdf) (24/06/2022 e 01/07/2022, Csaba Schneider)
+- [Feixes e Esquemas](PDF/esquemasefeixes_condensados.pdf) (1/07/2022 e 8/09/2022, André Contiero)
