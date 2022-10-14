@@ -13,4 +13,4 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 - [Limites e Conjuntos Profinitos](PDF/seminariolimites.pdf) (John MacQuarrie, 16/09/2022)
 - [Notas mais cumpridas sobre limites e conjuntos profinitos](PDF/notaslimitesricardo.pdf) (Ricardo Souza)
 - [Definição dos conjuntos condensados, problemas de tamanho](PDF/LuizCondensedSetDefs.pdf) (Luiz Felipe Andrade Campos, 23/09/2022)
-- [Compactificação de Stone-Čech](PDF/compatificacao.pdf) (Lucas de Souza, 7/10/2022 e 14/10/2022)
+- [Compactificação de Stone-Čech](PDF/compactificacao.pdf) (Lucas de Souza, 7/10/2022 e 14/10/2022)
