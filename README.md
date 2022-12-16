@@ -16,5 +16,5 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 - [Compactificação de Stone-Čech](PDF/compactificacao.pdf) (Lucas de Souza, 7/10/2022)
 - [Espaços Compactamente Gerados](PDF/comp_gerados.pdf) (Lucas de Souza, 14/10/2022)
 - [Seminário do Marlon](PDF/marlon.pdf) (Marlon Stefano, 21/10/2022 e 04/11/2022)
-- [Categorias equivalentes à categoria de conjuntos condensados](PDF/equivalencia.pdf) (Matheus Johnny Caetano, 18/11/2022 e 25/11/2022)
+- [Categorias equivalentes à categoria de conjuntos condensados](PDF/Categorias_equivalentes___categoria_de_conjuntos_condensados.pdf) (Matheus Johnny Caetano, 18/11/2022 e 25/11/2022)
 - [O Teorema 2.2](PDF/teorema2.2.pdf) (Igor Martins Silva, 02/12/2022 e 09/12/2022)
