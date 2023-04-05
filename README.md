@@ -18,3 +18,5 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 - [Seminário do Marlon](PDF/marlon.pdf) (Marlon Stefano, 21/10/2022 e 04/11/2022)
 - [Categorias equivalentes à categoria de conjuntos condensados](PDF/Categorias_equivalentes___categoria_de_conjuntos_condensados.pdf) (Matheus Johnny Caetano, 18/11/2022 e 25/11/2022)
 - [O Teorema 2.2](PDF/teorema2.2.pdf) (Igor Martins Silva, 02/12/2022 e 09/12/2022)
+
+- [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (28/03/2023 e 04/04/2023, John MacQuarrie)
