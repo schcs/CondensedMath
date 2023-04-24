@@ -1,0 +1,403 @@
+
+\documentclass[12pt]{amsart}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage{showkeys}
+\usepackage{amscd}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+
+\renewcommand{\a}{\mathfrak a}
+\renewcommand{\b}{\mathfrak b}
+\newcommand{\m}{\mathfrak m}
+\newcommand{\n}{\mathfrak n}
+\newcommand{\p}{\mathfrak p}
+\newcommand{\q}{\mathfrak q}
+\renewcommand{\r}{\mathfrak r}
+\newcommand{\F}{\mathbb F}
+\renewcommand{\L}{\mathbb L}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+
+
+\newcommand{\K}{\mathbb K}
+\newcommand{\fracf}[1]{\mbox{Frac}(#1)}
+\newcommand{\spec}[1]{\mbox{Spec}(#1)}
+\newcommand{\len}{\mbox{len}\,}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{exercise}[theorem]{Exercício}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Exemplo}
+
+
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\textheight 8.1in \textwidth 6.3in
+
+
+\relpenalty=10000
+\binoppenalty=10000
+\tolerance=500
+
+
+\begin{document}
+
+%\Large
+\title{Categorias}
+\author{SCHCS}
+\maketitle
+
+Notas baseadas nos primeiros capítulos do livro \emph{Basic Category Theory} por Tom Leinster 
+(\emph{Cambridge studies in advanced mathematics}, vol.\ 143, CUP, 2014).
+
+\section{Definições básicas}
+Uma \emph{categoria} $C$ consiste de 
+\begin{enumerate}
+\item \emph{objetos} $A$, $B$, $C$;
+\item para cada par de objetos $A$ e $B$, uma coleção $H(A,B)$ de \emph{morfismos} (mapas, setas, flechas, 
+etc) $A\to B$. 
+\end{enumerate}
+
+Outra notação para os morfismos: $\mbox{Hom}(A,B)$, $C(A,B)$, $H_C(A,B)$, $\mbox{Hom}_C(A,B)$.
+
+Para objetos $A$, $B$, $C$ temos uma função 
+$$
+H(A,B) \times H(B,C)\to H(A,C),\quad (f,g)\mapsto g\circ f.
+$$
+Esta função chama-se \emph{composição}. Para cada objeto $A$ temos $1_A\in H(A,A)$ tal que 
+$$
+1_B\circ h=h,\ h\circ 1_A=h,\ (f\circ g)\circ h=f\circ(g\circ h)
+$$
+para todo $h\in H(A,B)$, $g\in H(B,C)$ e $f\in H(C,D)$. Se $f\in H(A,B)$. então $A$ é o \emph{domínio} de $f$ e 
+$B$ é o \emph{codomínio}.
+
+\begin{example}
+As seguintes são os exemplos mais comuns de categorias:
+
+\begin{enumerate}
+\item {\bf Set}: Os objetos são conjuntos, os mapas são mapas entre conjuntos.
+\item {\bf Grp}: Os objetos são grupos, e os mapas são homomorfismos entre grupos. 
+\item {\bf AbGrp}: Os objestos são grupos abelianos e os morfismos são homomorfismos.
+\item {\bf Ring}: Os objetos são anéis (com $1$), e os mapas são homomorfismos entre anéis.
+\item {\bf CRing}: Os objetos são anéis comutativos (com $1$), e os mapas são homomorfismos entre anéis 
+comutativos.
+\item $k$-{\bf Vect}: 
+Os objetos são espaços vetoriais sobre um corpo $k$ e os objetos são aplicações $k$-lineares.
+\item $R$-{\bf Mod}: Os objetos são $R$-módulos (à esquerda) e os mapas são $R$-homomorfismos. 
+\item {\bf Top}: Os objetos são espaços topológicos e os mapas são funções contínuas.
+\end{enumerate}
+\end{example}
+
+Um mapa $f\in H(A,B)$ é dito \emph{isomorfismo}, se existir $g\in H(B,A)$ tal que $fg=1_B$ e $gf=1_A$. 
+
+\begin{example}
+Outros exemplos, 
+\begin{enumerate}
+    \item $\emptyset$ com nenhum objeto e nenhuma flecha; 
+    \item $\{A\}$ com um objeto e uma flecha $1_A$;  
+\item $A\to B$ com dois objetos e três flechas $1_A$, $1_B$, $A\to B$. 
+\item Um monoide $M$ pode ser visto como uma categoria com um objeto $A$ e uma flecha associada com cada elemento de $M$. A identidade de $M$ corresponde a $1_A$ e a associatividade do monoide corresponde à associatividade da composição.
+\item Um grupo $G$ pode ser visto como  uma categoria com um objeto $A$ e uma flecha  associada com cada elemento de $G$. Neste caso, toda flecha da categoria é um isomorfismo.
+\item Se $P$ é um conjunto parcialmente ordenado, então $P$ pode ser visto como uma categoria. Os objetos da categoria são os elementos de $P$ e, para $\alpha,\beta\in P$, 
+temos uma flecha $\varphi_{\alpha,\beta}:\alpha\to\beta$ na categoria se e somente se $\alpha\leq \beta$. Neste caso, 
+$H(\alpha,\beta)=\{\varphi_{\alpha,\beta}\}$. 
+\end{enumerate}
+\end{example}
+
+\subsection{Categoria oposta ou dual}
+Seja $C$ uma categoria. Definimos o \emph{dual} ou \emph{oposta} $C'$ de $C$. Os objetos de $C'$ são os 
+mesmos que os objetos de $C$, $1_A$ em $C'$ é o mesmo que em $C$, e $H_{C'}(A,B)=H_C(B,A)$. 
+
+\section{Functores}
+
+Sejam $C$ e $D$ categorias. Um \emph{functor} $F:C\to D$ associa
+\begin{enumerate}
+\item cada objeto $A\in C$ com um objeto $F(A)\in D$;
+\item cada mapa $f\in H(A,B)$ com um mapa $F(f)\in H(F(A),F(B))$
+\end{enumerate}
+tal que 
+\[
+    F(1_A)=1_{F(A)}\quad\mbox{e}\quad F(fg)=F(f)F(g).
+\]
+
+\begin{example}
+\emph{Functores de esquecimento:} Considere o seguinte functor ${\bf Grp} \to {\bf Set}$. Associamos com cada grupo $G$ o seu conjunto 
+$G$ e $F(\alpha)=\alpha$ para cada $\alpha\in H_{\bf Grp}(G,H)$. 
+
+Pode-se definir functores de esquecimento similarmente 
+\begin{enumerate}
+    \item {\bf Ring} $\to$ {\bf Set}; 
+    \item {\bf Ring} $\to$ {\bf Grp}; 
+    \item $R$-{\bf mod} $\to$ {\bf AbGrp}; 
+    \item {\bf Ab} $\to$ {\bf Grp}.
+\end{enumerate}
+\end{example}
+
+\begin{example}
+\emph{Functores livres:} Considere por exemplo o functor {\bf Set} $\to$ {\bf Grp} levando cada conjunto $X$ ao grupo 
+$F(X)$ livre gerado por $X$. Um morfimso $\alpha:X\to Y$ induz um único homomorfismo $\bar \alpha:F(X)\to F(Y)$. 
+Pode-se definir functores similares 
+\begin{enumerate}
+\item {\bf Set} $\to$ $k$-{\bf Vect}; 
+\item {\bf Set} $\to$ $R$-{\bf Mod}; 
+\item {\bf Set} $\to$ {\bf CRing};
+\item {\bf Set} $\to$ $k$-{\bf CAlg} (a categoria de $k$-álgebras comutativas onde $k$ é um corpo).
+\end{enumerate} 
+\end{example}
+
+Um functor contravariante entre $C$ e $D$ é um functor $C \to D'$.
+
+\begin{example}
+{\bf Top} $\to$ $\mathbb R$-{\bf CAlg}: Seja $X$ um espaço topológico. Definimos o functor $F$ 
+como $X\mapsto C(X,\mathbb R)$ onde $C(X,\mathbb R)$ é o anel das funções contínuas de $X$ para $\mathbb R$. Se $f: X\to Y$ em {\bf Top}, então $F(f): F(Y)\to F(X)$ com $F(f)(\psi)=\psi\circ f$. Às vezes, escrevemos que 
+$F(f)=-\circ f$.
+\end{example}
+
+\begin{example}
+O espectro {\bf CRing}  $\to$  {\bf Top}: $R\mapsto \mbox{Spec}(R)$ onde 
+\[ 
+    \mbox{Spec}(R)=\{P\subset R\mid P \mbox{ é um ideal primo}\}.
+\]
+Definimos uma topologia (chamada de \emph{Topologia de Zariski}) em $\mbox{Spec}(R)$ com a regra que 
+$$ 
+V(I) =\{P\in\mbox{Spec}(R)\mid I\subseteq P\}
+$$
+são os fechados para $I\subseteq R$ ideais. Se $f:R\to S$, então $\mbox{Spec}(f):\mbox{Spec}(S)\to \mbox{Spec}(R)$ está definido como $\mbox{Spec}(f)(Q)=\varphi^{-1}(Q)$ para cada $Q\in \mbox{Spec}(S)$. É um exercício fácil 
+mostrar que isso é bem definido, pois a pré-imagem homomorfica de um ideal primo é primo.
+\end{example}
+
+Um functor $F:C\to D$ é dito \emph{fiel} (repetivamente, \emph{pleno}, \emph{full} em inglés) se todos os mapas $H(A,B)\to H(F(A),F(B))$ são injetivos (respetivamente, sobrejetivos). 
+
+Uma \emph{subcategoria} $D$ de $C$ contém objetos de $C$ e $H_D(A,B)\subseteq H_C(A,B)$. Subcategoria é 
+\emph{plena}  se 
+$H_D(A,B)= H_C(A,B)$. Por exemplo, {\bf AbGrp} é uma subcategoria plena de {\bf Grp}.
+
+\section{Transformação natural}
+
+Sejam $C$ e $D$ categorias e $F,G: C\to D$ functores. Uma \emph{transformação natural} $\alpha$ entre $F$ e $G$ é composta por uma família de morfismos 
+$\alpha_A:F(A)\to G(A)$ para todo objeto $A$ em $C$ tal que para todo mapa $f:A \to B$ o diagrama 
+\begin{equation}\label{eq:natural}
+\begin{CD}
+F(A) @>F(f)>> F(B)\\
+ @V\alpha_AVV       @VV\alpha_BV\\
+G(A) @>>G(f)> G(B)
+\end{CD}
+\end{equation}
+comuta. 
+
+
+\begin{example}
+Seja $C$ uma categoria discreta sobre um conjunto $X$. Então $C$ não tem flechas, 
+exceto $1_x$ para todo $x\in X$. Seja $D$ uma categoria qualquer. Então functores $F,G:C\to D$ escolhem 
+objetos $F(x)$ e $G(x)$ para cada $x \in X$. Uma transformação natural $\alpha$ é uma coleção de mapas  $\alpha_x:F(x)\to G(x)$.   
+\end{example}
+
+\begin{example}
+Seja $n\geq 1$ fixo, e considere $F,G:{\bf CRing} \to {\bf Grp}$ onde $F(R) = GL_n(R)$, $G(R)=R^*$. 
+É fácil ver que estas correspodências são functoriais; ou seja, estendem-se para morfismos. O mapa 
+$\det_R:GL_n(R) \to R^*$ é uma transformação natural. 
+\end{example}
+
+Transformações naturais podem ser compostas. Se $F,G,H:C\to D$ functores, $\alpha:F\to G$, $\beta:G\to H$ são transformações naturais, então a composição $\beta\alpha$ é transformação natural $F\to H$. A identidade $1_{F(A)}:F(A)\to F(A)$ é natural $F\to F$. Assim se $C$ e $D$ são categorias, então 
+a \emph{categoria dos funtores} $[C,D]$ tem os functores entre $C$ e $D$ como os objetos e as 
+transformações naturais como os morfismos. 
+
+\emph{Isomorphismo natural} entre $F$ e $G$ é uma transformação natural $\alpha$ tal que 
+\[
+    \alpha_A:F(A)\to G(A)
+\] 
+é um isomorfismo para cada objeto $A$ na categoria $C$.
+
+\begin{exercise}
+Isomorphismo natural é um isomorfismo na categoria dos functores. Neste caso os functores $F$ e $G$ são naturalmente isomorfos. 
+\end{exercise}
+
+Dados dois functores $F,G:C\to D$. Dizemos que $F(A)$ e $G(A)$ são naturalmente isomorfos se $F$ e $G$ são naturalmente isomorfos. 
+
+
+\begin{example}[O duplo dual]
+Sejam $V$ e $W$ $k$-espaços vetoriais. Lembremos que $V^*=\mbox{Hom}(V,k)$ e, por extensão, 
+$V^{**}=\mbox{Hom}(V^*,k)$. A correspondência $(-)^*$ é functorial contravariante; de fato,
+se $\alpha: V\to W$, definimos $\alpha^*:W^*\to V^*$ como $\alpha^*=-\circ \alpha$ e 
+$\alpha^{**}: V^{**}\to W^{**}$ como $\alpha^{**}=-\circ \alpha^*$. Ou seja, 
+\[
+    \alpha^{**}(\beta)(\psi) = (\beta\circ\alpha^*)(\psi)=\beta(\psi\circ \alpha)
+\] 
+para $\beta\in V^{**}$ e $\psi\in W^*$. Temos que $\varphi^V:v\mapsto \varphi^V_v$ é um mapa de $V\to V^{**}$ onde $\varphi^V_v(\chi)=\chi(v)$ para $v\in V$ e $\chi\in V^*$. Afirmamos que a coleção 
+de mapas $\varphi^V$ define uma transformação natural 
+entre os functores $1,(-)^{**}:k\mbox{-{\bf Vect}}\to k\mbox{-{\bf Vect}}$. 
+Escrevendo o diagrama~\eqref{eq:natural} para esta situação, precisa-se provar que  $\alpha^{**}(\varphi^V_v)=\varphi^W_{\alpha(v)}$ para todo $\alpha:V\to W$ em $k\mbox{-{\bf Vect}}$. Mas isso segue dos fatos que 
+$$
+    \alpha^{**}(\varphi^V_v)(\psi)=\varphi^V_v(\psi\circ\alpha)=\psi(\alpha(v))
+$$
+e 
+$$
+    \varphi^W_{\alpha(v)}(\psi)=\psi(\alpha(v)).
+$$
+Então temos que os $\varphi^V$ determinam uma transformação natural. Note que se $\dim V$ é finita, então 
+$\varphi^V: V\to V^{**}$ é um isomorfismo e neste caso temos um isomorfismo entre os functores $1$ e 
+$(-)^{**}$ na categoria $k\mbox{-{\bf FinVect}}$ de $k$-espaços de dimensão finita.
+\end{example}
+
+\section{Functores adjuntos}
+Sejam $C$ e $D$ categorias e assuma que temos functores 
+\[
+    F:C\to D\quad\mbox{e}\quad G:D\to C.
+\] 
+Dizemos que $(F,G)$ é um \emph{par
+adjunto} ou $F$ é \emph{adjunto à esquerda} de $G$, ou $G$ é \emph{adjunto à direita} de $F$ se para cada par de 
+objetos $A\in C$ e $B\in D$ existe uma bijeção 
+\[
+    \varrho_{A,B}:H_D(F(A),B)\to H_C(A,G(B))
+\]
+natural no sentido explicado nos itens (1)--(2) em baixo. 
+Para simplificar a notação, 
+se $g\in  H_D(F(A),B)$ e $f\in H_C(A,G(B))$ então denotamos a suas imagens por esta bijeção como $\bar g$ e 
+$\bar f$, respetivamente.
+
+A palavra ``natural'' no parágrafo anterior tem o seguinte significado.
+\begin{enumerate}
+    \item Seja $A\in C$, $B,B'\in D$ objetos e sejam $g:F(A)\to B$ e $q:B\to B'$. Então
+\[
+    \overline{F(A)\xrightarrow{g} B\xrightarrow{q} B'}=A\xrightarrow{\bar g} G(B)\xrightarrow{G(q)} G(B').
+\]
+    \item Seja $A,A'\in C$, $B\in D$ objetos e sejam $p:A'\to A$ e $f:A\to G(B)$. Então
+\[
+    \overline{A'\xrightarrow{p} A\xrightarrow{f} G(B)}=F(A')\xrightarrow{F(p)} F(A)\xrightarrow{\bar f} B.
+\]
+\end{enumerate} 
+As condições (1) e (2) podem ser expressas com a comutatividade dos seguintes diagramas:
+\[
+\begin{CD}
+    H_D(F(A),B) @>{q\circ-}>> H_D(F(A),B')\\
+    @V{\varrho_{A,B}}VV @VV{\varrho_{A,B'}}V\\
+    H_C(A,G(B) ) @>>{G(q)\circ -}>H_C(A,G(B'))
+\end{CD}\quad
+\mbox{e}
+\quad
+\begin{CD}
+    H_C(A,G(B)) @>{-\circ p}>> H_C(A',G(B))\\
+    @A{\varrho_{A,B}}AA @AA{\varrho_{A',B}}A\\
+    H_D(F(A),B ) @>>{-\circ F(p)}>H_C(F(A'),B).
+\end{CD}
+\]
+
+\begin{example}\label{ex:vect}
+    Considere os functores $F:{\bf Set}\to k\mbox{-\bf Vect}$ e $G:k\mbox{-\bf Vect}\to {\bf Set}$ onde, para um conjunto $X$,  $F(X)=k[X]$ é o espaço vetorial de combinações lineares formais  
+    de elementos de $X$ com coeficientes em $k$ (o $k$-espaço com base $X$) 
+    e para um $k$-espaço vetorial $V$, $G(V)=V$ (ou seja, 
+    $G$ é um functor de esquecimento). 
+    Note que $F$ e $G$ podem ser definidos para morfismos na maneira óbvia. 
+    Assuma que $X$ é um conjunto, $V$ é um $k$-espaço. 
+    A bijeção natural na definição do adjunto  pode ser definida como 
+    \begin{align*}
+        \varrho_{X,V}&:H_{k\textrm{-\bf Vect}}(k[X],V)\to H_{\bf Set}(X,G(V))=H_{\bf Set}(X,V):\\
+        g&\mapsto \bar g=g|_X\\
+        \bar f&\mapsfrom f
+    \end{align*}
+    onde $\bar f:k[X]\to V$ é o mapa induzido por $f:X\to V$.
+    Sejam $g:k[X]\to V$ e $q:V\to V'$ em $k\textrm{-\bf Vect}$, e $f:X\to V$ e $p:X'\to X$
+    em {\bf Set}. 
+    Traçando os dois diagramas antes do exemplo obtemos as seguintes imagens:
+    \[
+    \begin{CD}
+        g @>{q\circ-}>> q\circ g\\
+        @V{\varrho_{X,V}}VV @VV{\varrho_{X,V'}}V\\
+        g|_X @>>{G(q)\circ -}>(q\circ g)|_X=q\circ(g|_X)
+    \end{CD}
+    \quad
+    \mbox{e}
+    \qquad
+\begin{CD}
+    f @>{-\circ p}>> f\circ p=(\bar f \circ F(p))|_X\\
+    @A{\varrho_{X,V}}AA @AA{\varrho_{X',V}}A\\
+    \bar f @>>{-\circ F(p)}>\bar f\circ F(p)
+\end{CD}
+\]
+Temos que $(F,G)$ é um par adjunto.
+\end{example}
+
+\begin{example}
+    Considere os functores $F:{\bf Grp}\to {\bf AbGrp}$ e $G:{\bf AbGrp}\to {\bf Grp}$ onde 
+    $F(X)=X/X'$ ($X'$ sendo o subgrupo derivado) e $G(A)=A$
+    (ou seja, $G$ é um functor de esquecimento). 
+    O quociente $X/X'$ é chamado de \emph{abelianização} de $X$. 
+    Note que a correspodência $X\mapsto X/X'$ é functorial, pois se 
+    $\alpha:X\to Y$ é um morfismo, então $\alpha$ induz um morfismo $\alpha_{\rm ab}:X/X'\to Y/Y'$.
+    Note que temos a projeção natural $\pi_X:X\to X/X'$ para cada grupo $X$.
+    Dado $X$ em {\bf Grp} e $A$ em {\bf AbGrp} temos que a bijeção 
+    $\mbox{Hom}_{\bf AbGrp}(X/X',A)\to \mbox{Hom}_{\bf Grp}(X,A)$ pode ser dada por 
+    \[
+        g\mapsto g\circ\pi_X\quad e \quad f\mapsto f_{\rm ab}.
+    \]  
+    É fácil verificar que $(F,G)$ é um par adjunto.
+\end{example}
+
+\begin{example}\label{ex:tensorhom}
+    Considere um anel comutativo $R$ com $1$ e seja $N$ um $R$-módulo. Considere os functores 
+    $-\otimes N$ e ${\rm Hom}(N,-)$ na categoria $R$-{\bf Mod}. Note que as duas destas correspondências 
+    são functoriais, pois se $\alpha:M_1\to M_2$, então
+    \[
+        \alpha\otimes N:M_1\otimes N\to M_2\otimes N, \quad m\otimes n\mapsto \alpha(m)\otimes n
+    \]
+    e
+    \[
+    {\rm Hom}(N,\alpha):{\rm Hom}(N,M_1)\to {\rm Hom}(N,M_2)\quad \varphi\mapsto \alpha\circ\varphi.
+    \]
+    Se $M$ e $P$ são $R$-módulos, então existe
+    uma bijeção natural entre ${\rm Hom}(M\otimes N,P)$ e ${\rm Hom}(M,{\rm Hom}(N,P))$ dada por 
+    \[
+        f\mapsto \psi_f \quad\mbox{onde}\quad \psi_f(m)(n)=f(m\otimes n)
+    \]
+    e 
+    \[
+        \varphi\mapsto f_\varphi\quad\mbox{onde}\quad f_\varphi(m\otimes n)=\varphi(m)(n).
+    \]
+    É fácil verificar que os dois mapas são inversos e satisfazem a definição de par adjunto.
+\end{example}
+
+O seguinte teorema mostra o poder de pares adjuntos de functores. O teorema é verdadeira em em contexto 
+mais geral, nomeadamente em categorias abelianas. 
+
+\begin{theorem}
+    Sejam $R$ e $S$ anéis comutativos com identidade e considere um par $(F,G)$ adjunto de functores 
+    $F:R\textrm{-\bf Mod}\to S\textrm{-\bf Mod}$ e $G:S\textrm{-\bf Mod}\to R\textrm{-\bf Mod}$. Então 
+    $F$ é exato à direita e $G$ é exato à esquerda.  Em particular, 
+    se $\alpha:M_1\to M_2$ em $R\textrm{-\bf Mod}$ é sobrejetivo, então $F(\alpha)$ também é sobrejetivo, 
+    e se $\beta:N_1\to N_1$ em $S\textrm{-\bf Mod}$ é injetivo então $G(\beta)$ também é injetivo.
+\end{theorem}
+
+\begin{corollary}
+    O functor $-\otimes N$ definido no Exemplo~\ref{ex:tensorhom} é exato à direita e  ${\rm Hom}(N,-)$ é exato à esquerda. Ou seja, se 
+    $\alpha:M_1\to M_1$ é sobrejetivo e $\beta:M_1\to M_2$ é injetivo, então 
+    $\alpha\otimes N:M_1\otimes N\to M_2\otimes N$ é sobrejetivo e ${\rm Hom}(N,\beta):{\rm Hom}(N,M_1)\to 
+    {\rm Hom}(N,M_2)$ é injetivo.
+\end{corollary}
+
+Assuma que $(F,G)$ é um par de functores adjuntos para as categorias $C$ e $D$. 
+As composições $FG$ e $GF$ são functores de $D\to D$ e $C\to C$, respetivamente. Seja $A$ um objeto de $C$. 
+Então $1_{F(A)}:F(A)\to F(A)$ corresonde a um morfismo $\eta_A=\overline{1_{F(A)}}:A\to GF(A)$. 
+ Similarmente, se $B$ é um objeto em $D$, então 
+$\varepsilon_B=\overline{1_{G(B)}}:FG(B)\to B$.  
+
+\begin{example}
+    Considere a construção no Exemplo~\ref{ex:vect}.
+    Seja $X$ um conjunto e considere $1_{k[X]}:k[X]\to k[X]$. O morfismo $\eta_X: X\to k[X]$ é 
+    a inclusão de $X$ em $k[X]$. Agora seja $V$ um espaço vetorial e considere $1_V:V\to V$. 
+    O mapa correspondente $\varepsilon_V:k[V]\to V$ leva uma $k$-combinação linear formal 
+    com elementos de $V$ ao seu valor em $V$. 
+\end{example}
+
+\begin{lemma}
+As funções $\eta_A$ e $\varepsilon_B$ definem transformações naturais $\eta: 1_C\to GF$ e $\varepsilon:FG\to 1_D$.
+\end{lemma}
+\begin{proof}
+    Exercício.
+\end{proof}
+Os mapas $\eta$ e $\varepsilon$ são chamados de \emph{unidade} e \emph{counidade} da adjunção.
+\end{document}

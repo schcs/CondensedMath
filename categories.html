@@ -1,0 +1,85 @@
+<h1 id="categorias">Categorias</h1>
+<p>Uma categoria <span class="math inline"><em>C</em></span> consiste de</p>
+<ul>
+<li>objetos <span class="math inline"><em>A</em></span>, <span class="math inline"><em>B</em></span>, <span class="math inline"><em>C</em></span></li>
+<li>para cada par de objetos <span class="math inline"><em>A</em></span> e <span class="math inline"><em>B</em></span>, uma coleção <span class="math inline"><em>H</em>(<em>A</em>, <em>B</em>)</span> de morfismos (mapas, setas, etc) <span class="math inline"><em>A</em> → <em>B</em></span>.</li>
+</ul>
+<p>Outra notação: <span class="math inline">Hom(<em>A</em>, <em>B</em>)</span>, <span class="math inline"><em>C</em>(<em>A</em>, <em>B</em>)</span>, <span class="math inline"><em>H</em><sub><em>C</em></sub>(<em>A</em>, <em>B</em>)</span>, <span class="math inline"><em>H</em><em>o</em><em>m</em><sub><em>C</em></sub>(<em>A</em>, <em>B</em>)</span>.</p>
+<p>Para objetos <span class="math inline"><em>A</em></span>, <span class="math inline"><em>B</em></span>, <span class="math inline"><em>C</em></span> temos uma função <br /><span class="math display"><em>H</em>(<em>A</em>, <em>B</em>) × <em>H</em>(<em>B</em>, <em>C</em>) → <em>H</em>(<em>A</em>, <em>C</em>), (<em>f</em>, <em>g</em>) ↦ <em>f</em> ∘ <em>g</em>.</span><br /> Esta função chama-se composição. Para cada objeto <span class="math inline"><em>A</em></span> temos <span class="math inline">1<sub><em>A</em></sub> ∈ <em>H</em>(<em>A</em>, <em>A</em>)</span> tal que <br /><span class="math display">1<sub><em>B</em></sub> ∘ <em>h</em> = <em>h</em>, <em>h</em> ∘ 1<sub><em>A</em></sub> = <em>h</em>, (<em>f</em> ∘ <em>g</em>) ∘ <em>h</em> = <em>f</em> ∘ (<em>g</em> ∘ <em>h</em>)</span><br /> para todo <span class="math inline"><em>h</em> ∈ <em>H</em>(<em>A</em>, <em>B</em>)</span>, <span class="math inline"><em>g</em> ∈ <em>H</em>(<em>B</em>, <em>C</em>)</span> e <span class="math inline"><em>f</em> ∈ <em>H</em>(<em>C</em>, <em>D</em>)</span>. Se <span class="math inline"><em>f</em> ∈ <em>H</em>(<em>A</em>, <em>B</em>)</span>. então <span class="math inline"><em>A</em></span> é o domínio de <span class="math inline"><em>f</em></span> e <span class="math inline"><em>B</em></span> é o codomínio.</p>
+<h2 id="exemplos">Exemplos</h2>
+<p>As seguintes são os exemplos mais comuns de categorias:</p>
+<ul>
+<li><strong>Set</strong>: Os objetos são conjuntos, os mapas são mapas entre conjuntos.</li>
+<li><strong>Grp</strong>: Os objetos são grupos, e os mapas são homomorfismos entre grupos.</li>
+<li><strong>Ring</strong>: Os objetos são anéis (com <span class="math inline">1</span>), e os mapas são homomorfismos entre anéis. – <strong>CRing</strong>: Os objetos são anéis comutativos (com <span class="math inline">1</span>), e os mapas são homomorfismos entre anéis computativos.</li>
+<li><strong>Vect_k</strong>: Os objetos são espaços vetoriais sobre um corpo <span class="math inline"><em>k</em></span> e os objetos são aplicações <span class="math inline"><em>k</em></span>-lineares.</li>
+<li><strong><span class="math inline"><em>R</em></span>-Mod</strong>: Os objetos são <span class="math inline"><em>R</em></span>-módulos (à esquerda) e os mapas são <span class="math inline"><em>R</em></span>-homomorfismos.</li>
+<li><strong>Top</strong>: Os objetos são espaços topológicos e os mapas são funções contínuas.</li>
+</ul>
+<p>Um mapa <span class="math inline"><em>f</em> ∈ <em>H</em>(<em>A</em>, <em>B</em>)</span> é dito <strong>isomorfismo</strong>, se existir <span class="math inline"><em>g</em> ∈ <em>H</em>(<em>B</em>, <em>A</em>)</span> tal que <span class="math inline"><em>f</em><em>g</em> = 1<sub><em>B</em></sub></span> e <span class="math inline"><em>g</em><em>f</em> = 1<sub><em>A</em></sub></span>.</p>
+<h3 id="outros-exemplos">Outros exemplos,</h3>
+<ul>
+<li><span class="math inline">∅</span> com nenhum objeto e nenhuma seta</li>
+<li><span class="math inline">{1}</span> com um objeto e uma seta <span class="math inline">1<sub>1</sub></span><br />
+</li>
+<li><span class="math inline"><em>A</em> → <em>B</em></span> com dois objetos e três setas <span class="math inline">1<sub><em>A</em></sub></span>, <span class="math inline">1<sub><em>B</em></sub></span>, <span class="math inline"><em>A</em> → <em>B</em></span>.</li>
+<li>Um monoide <span class="math inline"><em>M</em></span> pode ser visto como uma categoria com um objeto <span class="math inline"><em>A</em></span> e uma seta associada com cada elemento de <span class="math inline"><em>M</em></span>. A identidade de <span class="math inline"><em>M</em></span> corresponde a <span class="math inline">1<sub><em>A</em></sub></span> e a associatividade do monoide corresponde à associatividade da composição.</li>
+<li>Um grupo <span class="math inline"><em>G</em></span> pode ser visto como uma categoria com um objeto <span class="math inline"><em>A</em></span> e uma seta associada com cada elemento de <span class="math inline"><em>G</em></span>. Neste caso toda seta da categoria é um isomorfismo.</li>
+<li>Se <span class="math inline"><em>P</em></span> é um conjunto parcialmente ordenado, então <span class="math inline"><em>P</em></span> pode ser vista como uma categoria. Os objetos da categoria são os elementos de <span class="math inline"><em>P</em></span> e temos <span class="math inline"><em>α</em> → <em>β</em></span> na categoria se e somente se <span class="math inline"><em>α</em> ≤ <em>β</em></span>.</li>
+</ul>
+<h2 id="categoria-oposta-ou-dual.">Categoria oposta ou dual.</h2>
+<p>Seja <span class="math inline"><em>C</em></span> uma categoria. Definimos o dual ou oposta <span class="math inline"><em>C</em>′</span> de <span class="math inline"><em>C</em></span>. Os objetos de <span class="math inline"><em>C</em>′</span> são os mesmos, <span class="math inline">1<sub><em>A</em></sub></span> é o mesmo, e <span class="math inline"><em>H</em><sub><em>C</em>′</sub>(<em>A</em>, <em>B</em>) = <em>H</em><sub><em>C</em></sub>(<em>B</em>, <em>A</em>)</span>.</p>
+<h2 id="functores">Functores</h2>
+<p>Functor covariante</p>
+<p>Sejam <span class="math inline"><em>C</em></span> e <span class="math inline"><em>D</em></span> categorias. Um functor <span class="math inline"><em>F</em> : <em>C</em> → <em>D</em></span> associa</p>
+<ul>
+<li>cada objeto <span class="math inline"><em>A</em> ∈ <em>C</em></span> com um objeto <span class="math inline"><em>F</em>(<em>A</em>) ∈ <em>D</em></span></li>
+<li>cada mapa <span class="math inline"><em>f</em> ∈ <em>H</em>(<em>A</em>, <em>B</em>)</span> com um mapa <span class="math inline"><em>F</em>(<em>f</em>) ∈ <em>H</em>((<em>F</em>(<em>A</em>), <em>F</em>(<em>B</em>))</span></li>
+</ul>
+<p>tal que <br /><span class="math display"><em>F</em>(1<sub><em>A</em></sub>) = 1<sub><em>F</em>(<em>A</em>)</sub> e <em>F</em>(<em>f</em><em>g</em>) = <em>F</em>(<em>f</em>)<em>F</em>(<em>g</em>).</span><br /></p>
+<h3 id="functor-de-esquecimento">Functor de esquecimento</h3>
+<ul>
+<li><strong>Grp -&gt; Set</strong>: associamos com cada grupo <span class="math inline"><em>G</em></span> o seu conjunto <span class="math inline"><em>G</em></span> e <span class="math inline"><em>F</em>(<em>α</em>) = <em>α</em></span> para cada <span class="math inline"><em>α</em> ∈ <em>H</em><sub><em>G</em><em>r</em><em>p</em></sub>(<em>G</em>, <em>H</em>)</span><br />
+</li>
+<li><strong>Ring -&gt; Set</strong>,</li>
+<li><strong>Ring -&gt; Grp</strong>,</li>
+<li><strong>R-mod -&gt; Ab</strong>,</li>
+<li><strong>Ab -&gt; Grp</strong>.</li>
+</ul>
+<h3 id="functores-livres">Functores livres</h3>
+<ul>
+<li><strong>Set -&gt; Grp</strong>,</li>
+<li><strong>Set -&gt; Vec_k</strong>,</li>
+<li><strong>Set -&gt; R-mod</strong>,</li>
+<li><strong>Set -&gt; CRing</strong>.</li>
+</ul>
+<p>Um functor contravariante entre <span class="math inline"><em>C</em></span> e <span class="math inline"><em>D</em></span> é um functor <span class="math inline"><em>C</em> → <em>D</em>′</span>.</p>
+<h3 id="exemplos-1">Exemplos</h3>
+<ul>
+<li><strong>Top -&gt; CRing</strong>: Seja <span class="math inline"><em>X</em></span> um espaço topológico. Definimos o functor como <span class="math inline"><em>X</em> ↦ <em>C</em>(<em>C</em>, ℝ)</span> onde <span class="math inline"><em>C</em>(<em>X</em>, ℝ)</span> é o anel das funções contínuas de <span class="math inline"><em>X</em></span> para <span class="math inline">ℝ</span>. Se <span class="math inline"><em>f</em> : <em>X</em> → <em>Y</em></span> em Top, então <span class="math inline"><em>F</em>(<em>f</em>) : <em>F</em>(<em>Y</em>) → <em>F</em>(<em>X</em>)</span> com <span class="math inline"><em>F</em>(<em>f</em>)(<em>ψ</em>) = <em>ψ</em><em>f</em></span>.</li>
+<li><strong>Spec</strong>: CRing -&gt; Top, <span class="math inline"><em>R</em> ↦ Spec(<em>R</em>)</span>. Definimos uma topologia em <span class="math inline">Spec(<em>R</em>)</span> com a regra que <br /><span class="math display"><em>V</em>(<em>I</em>) = {<em>P</em> ∈ Spec(<em>R</em>) ∣ <em>I</em> ⊆ <em>P</em>}</span><br /> são fechados para <span class="math inline"><em>I</em> ⊆ <em>R</em></span> ideais. Se <span class="math inline"><em>f</em> : <em>R</em> → <em>S</em></span>, então <span class="math inline">Spec(<em>f</em>) : Spec(<em>S</em>) → Spec(<em>R</em>)</span> está definido como <span class="math inline">Spec(<em>f</em>)(<em>Q</em>) = <em>φ</em><sup> − 1</sup>(<em>Q</em>)</span> para cada <span class="math inline"><em>Q</em> ∈ Spec(<em>S</em>)</span>.</li>
+</ul>
+<p>Um functor <span class="math inline"><em>F</em> : <em>C</em> → <em>D</em></span> é dito fiel (cheio, full) se os mapas <span class="math inline"><em>H</em>(<em>A</em>, <em>B</em>) → <em>H</em>(<em>F</em>(<em>A</em>), <em>F</em>(<em>B</em>))</span> são injetivos (sobrejetivos).</p>
+<p>Uma subcategoria <span class="math inline"><em>D</em></span> de <span class="math inline"><em>C</em></span> contém objetos de <span class="math inline"><em>C</em></span> e <span class="math inline"><em>H</em><sub><em>D</em></sub>(<em>A</em>, <em>B</em>) ⊆ <em>H</em><sub><em>C</em></sub>(<em>A</em>, <em>B</em>)</span>. Subcategoria cheia se <span class="math inline"><em>H</em><sub><em>D</em></sub>(<em>A</em>, <em>B</em>) = <em>H</em><sub><em>C</em></sub>(<em>A</em>, <em>B</em>)</span>. Por exemplo, Ab é uma subcategoria cheia de Grp.</p>
+<h2 id="transformação-natural">Transformação natural</h2>
+<p>Sejam <span class="math inline"><em>C</em></span> e <span class="math inline"><em>D</em></span> categorias e <span class="math inline"><em>F</em>, <em>G</em> : <em>C</em> → <em>D</em></span> functores. Uma transformação natural <span class="math inline"><em>α</em></span> entre <span class="math inline"><em>F</em></span> e <span class="math inline"><em>G</em></span> é composta por uma família de morfismos <span class="math inline"><em>α</em><sub><em>A</em></sub> : <em>F</em>(<em>A</em>) → <em>G</em>(<em>A</em>)</span> para todo objeto <span class="math inline"><em>A</em></span> em <span class="math inline"><em>C</em></span> tal que para todo mapa <span class="math inline"><em>f</em> : <em>A</em> → <em>B</em></span> temos que o diagrama <!--$$
+\require{AMSCd}
+\begin{CD}
+F(A) @>>> F(B)\\
+ @VVV       V@@@\\
+G(A) @VVV G(B)
+\end{CD}
+$$
+--> comuta.</p>
+<h3 id="exemplos-2">Exemplos</h3>
+<ul>
+<li>Seja <span class="math inline"><em>C</em></span> uma categoria discreta sobre um conjunto <span class="math inline"><em>X</em></span>. Então <span class="math inline"><em>C</em></span> não tem setas, exceto <span class="math inline">1<sub><em>x</em></sub></span> para todo <span class="math inline"><em>x</em> ∈ <em>X</em></span>. Seja <span class="math inline"><em>D</em></span> uma categoria qualquer. Então functores <span class="math inline"><em>F</em>, <em>G</em> : <em>C</em> → <em>D</em></span> escolhem um elemento <span class="math inline"><em>F</em>(<em>x</em>)</span> e <span class="math inline"><em>G</em>(<em>x</em>)</span> para cada <span class="math inline"><em>x</em> ∈ <em>X</em></span>. Uma transformação natural <span class="math inline"><em>α</em></span> é uma coleção de mapas <span class="math inline"><em>α</em><sub><em>x</em></sub> : <em>F</em>(<em>x</em>) → <em>G</em>(<em>x</em>)</span>.<br />
+</li>
+<li>Considere <span class="math inline"><em>F</em>, <em>G</em> : <em>C</em><em>R</em><em>i</em><em>n</em><em>g</em> → <em>G</em><em>r</em><em>p</em></span>. <span class="math inline"><em>F</em>(<em>R</em>) = <em>G</em><em>L</em><sub><em>n</em></sub>(<em>R</em>)</span>, <span class="math inline"><em>G</em>(<em>R</em>) = <em>R</em><sup>*</sup></span>. Afirmamos que <span class="math inline">det<sub><em>R</em></sub> : <em>G</em><em>L</em><sub><em>n</em></sub>(<em>R</em>) → <em>R</em><sup>*</sup></span> é uma transformação natural.</li>
+</ul>
+<p>Transformações naturais podem ser compostas. Se <span class="math inline"><em>F</em>, <em>G</em>, <em>H</em> : <em>C</em> → <em>D</em></span> functores, <span class="math inline"><em>α</em> : <em>F</em> → <em>G</em></span>, <span class="math inline"><em>β</em> : <em>G</em> → <em>H</em></span> são transformações naturais, então a composição <span class="math inline"><em>β</em><em>α</em></span> é transformação natural <span class="math inline"><em>F</em> → <em>H</em></span>. A identidade <span class="math inline">1<sub><em>F</em>(<em>A</em>)</sub> : <em>F</em>(<em>A</em>) → <em>F</em>(<em>A</em>)</span> natural <span class="math inline"><em>F</em> → <em>F</em></span>. Assis se <span class="math inline"><em>C</em></span> e <span class="math inline"><em>D</em></span> são categorias, então a categoria dos funtores <span class="math inline">[<em>C</em>, <em>D</em>]</span> tem objetos functores entre <span class="math inline"><em>C</em></span> e <span class="math inline"><em>D</em></span> a as transformações naturais como morfismos.</p>
+<p>Isomorphismo natural entre <span class="math inline"><em>F</em></span> e <span class="math inline"><em>G</em></span> é uma transformação natural <span class="math inline"><em>α</em></span> tal que <span class="math inline"><em>α</em><sub><em>A</em></sub> : <em>F</em>(<em>A</em>) → <em>G</em>(<em>A</em>)</span> é um isomorfismo.</p>
+<p><strong>Exercício:</strong> Isomorphismo natural é um isomorfismo na categoria dos functores. Neste caso os functores <span class="math inline"><em>F</em></span> e <span class="math inline"><em>G</em></span> são naturalmente isomorfos.</p>
+<p>Dados dois functores <span class="math inline"><em>F</em>, <em>G</em> : <em>C</em> → <em>D</em></span>. Dizemos que <span class="math inline"><em>F</em>(<em>A</em>)</span> e <span class="math inline"><em>G</em>(<em>A</em>)</span> são naturalmente isomorfos se <span class="math inline"><em>F</em></span> e <span class="math inline"><em>G</em></span> são naturalmente isomorfos.</p>
+<h3 id="duplo-dual">Duplo dual</h3>
+<p>Seja <span class="math inline"><em>V</em></span> e <span class="math inline"><em>W</em></span> espaços vetoriais. Para <span class="math inline"><em>α</em> : <em>V</em> → <em>W</em></span>, temos que <span class="math inline"><em>α</em><sup>*</sup> =  −  ∘ <em>α</em></span> e <span class="math inline"><em>α</em><sup> * *</sup>(<em>β</em>) = <em>β</em>( −  ∘ <em>α</em>)</span>. Temos que <span class="math inline"><em>v</em> ↦ <em>φ</em><sub><em>v</em></sub></span> é um mapa de <span class="math inline"><em>V</em> → <em>V</em><sup> * *</sup></span> onde <span class="math inline"><em>φ</em><sub><em>v</em></sub>(<em>β</em>) = <em>β</em>(<em>v</em>)</span>. Precisa provar que <span class="math inline"><em>α</em><sup> * *</sup>(<em>φ</em><sub><em>v</em></sub>) = <em>φ</em>(<em>α</em><sub><em>v</em></sub>)</span>. Mas isso segue dos fatos que <br /><span class="math display"><em>α</em><sup> * *</sup>(<em>φ</em><sub><em>v</em></sub>)(<em>χ</em>) = <em>φ</em><sub><em>v</em></sub>( −  ∘ <em>α</em>)(<em>χ</em>) = <em>φ</em><sub><em>v</em></sub>(<em>χ</em> ∘ <em>α</em>) = <em>χ</em>(<em>α</em>(<em>v</em>))</span><br /> e <br /><span class="math display"><em>φ</em><sub><em>α</em>(<em>v</em>)</sub>(<em>χ</em>) = <em>χ</em>(<em>α</em>(<em>v</em>)).</span><br /> Pronto.</p>

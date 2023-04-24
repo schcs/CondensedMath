@@ -20,3 +20,4 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 - [O Teorema 2.2](PDF/teorema2.2.pdf) (Igor Martins Silva, 02/12/2022 e 09/12/2022)
 
 - [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (28/03/2023 e 04/04/2023, John MacQuarrie)
+- [Categorias equivalentes à categoria de conjuntos condensados, Parte II](PDF/matheus.pdf) (Matheus Johnny Caetano, 11/04/2023 e 18/04/2023)
