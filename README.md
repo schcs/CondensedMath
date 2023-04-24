@@ -7,6 +7,8 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 
 ## Notas e apostilas 
 
+### Seminários de 2022/II
+
 - [Introdução](PDF/intro.pdf) (24/06/2022, John MacQuarrie)
 - [Categorias](PDF/categories.pdf) (24/06/2022 e 01/07/2022, Csaba Schneider)
 - [Feixes e Esquemas](PDF/esquemasefeixes_condensados.pdf) (1/07/2022 e 8/09/2022, André Contiero)
@@ -18,6 +20,8 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 - [Seminário do Marlon](PDF/marlon.pdf) (Marlon Stefano, 21/10/2022 e 04/11/2022)
 - [Categorias equivalentes à categoria de conjuntos condensados](PDF/Categorias_equivalentes___categoria_de_conjuntos_condensados.pdf) (Matheus Johnny Caetano, 18/11/2022 e 25/11/2022)
 - [O Teorema 2.2](PDF/teorema2.2.pdf) (Igor Martins Silva, 02/12/2022 e 09/12/2022)
+
+### Seminários de 2023/I
 
 - [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (28/03/2023 e 04/04/2023, John MacQuarrie)
 - [Categorias equivalentes à categoria de conjuntos condensados, Parte II](PDF/matheus.pdf) (Matheus Johnny Caetano, 11/04/2023 e 18/04/2023)
