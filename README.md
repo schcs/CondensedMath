@@ -9,9 +9,9 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 
 ### Seminários de 2022/II
 
-- [Introdução](PDF/intro.pdf) (24/06/2022, John MacQuarrie)
-- [Categorias](PDF/categories.pdf) (24/06/2022 e 01/07/2022, Csaba Schneider)
-- [Feixes e Esquemas](PDF/esquemasefeixes_condensados.pdf) (1/07/2022 e 8/09/2022, André Contiero)
+- [Introdução](PDF/intro.pdf) (John MacQuarrie, 24/06/2022)
+- [Categorias](PDF/categories.pdf) (Csaba Schneider, 24/06/2022 e 01/07/2022)
+- [Feixes e Esquemas](PDF/esquemasefeixes_condensados.pdf) (André Contiero, 1/07/2022 e 8/09/2022)
 - [Limites e Conjuntos Profinitos](PDF/seminariolimites.pdf) (John MacQuarrie, 16/09/2022)
 - [Notas mais cumpridas sobre limites e conjuntos profinitos](PDF/notaslimitesricardo.pdf) (Ricardo Souza)
 - [Definição dos conjuntos condensados, problemas de tamanho](PDF/Condensed_Category.pdf) (Luiz Felipe Andrade Campos, 23/09/2022)
@@ -23,6 +23,6 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 
 ### Seminários de 2023/I
 
-- [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (28/03/2023 e 04/04/2023, John MacQuarrie)
+- [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (John MacQuarrie, 28/03/2023 e 04/04/2023)
 - [Categorias equivalentes à categoria de conjuntos condensados, Parte II](PDF/matheus.pdf) (Matheus Johnny Caetano, 11/04/2023 e 18/04/2023)
 - [O produto tensorial dos grupos abelianos condensados](PDF/prodTensHom.pdf) (Igor Martins Silva, 25/04/2023)
