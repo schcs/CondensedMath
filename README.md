@@ -25,3 +25,4 @@ O seminário é baseado nas notas [Lectures on Condensed Mathematics](https://ww
 
 - [Resumo do primeiro semestre](PDF/ResumoDeSemestre1.pdf) (28/03/2023 e 04/04/2023, John MacQuarrie)
 - [Categorias equivalentes à categoria de conjuntos condensados, Parte II](PDF/matheus.pdf) (Matheus Johnny Caetano, 11/04/2023 e 18/04/2023)
+- [O produto tensorial dos grupos abelianos condensados](PDF/prodTensHom.pdf) (Igor Martins Silva, 25/04/2023)
